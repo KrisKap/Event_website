@@ -1,0 +1,847 @@
+html {
+	font: 16px "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	/background-color: #668086;
+	color: #444;
+}
+
+h2 {
+	font-size: 2.5rem;
+	margin-bottom: 0rem;
+	margin-top: 0;
+}
+
+h3 {
+	font-size: 1.8rem;
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+
+p {
+	font-size: 1.2rem;
+	line-height: 1.4;
+	margin-top: 0rem;
+	margin-bottom: .5rem;
+}
+
+a {
+	text-decoration: none;
+	color: initial;
+}
+
+.wrapper {
+	padding: 0 5%;
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-wrap {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.justify-space-arnd {
+	justify-content: space-around;
+}
+
+.col-1-2 {
+	padding: 10px;
+}
+
+.col-1-3 {
+	width: 33.333333333%;
+	padding: 10px;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.about,
+.speakers,
+.registration {
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+
+
+
+
+
+
+/*---------------------------*/
+/*-------Main header style---*/
+/*---------------------------*/
+
+.main-header {
+	background-color: #5D5A5A;
+	height: 100vh;
+	max-width: 100%;
+	background: linear-gradient(
+				rgba(87,87,87,0.4),
+				rgba(87,87,87,0.4)),
+				url(../images/Optimized-vienna-banner.jpg) no-repeat fixed center;
+	background-size: cover;			 
+
+}
+
+.hero-banner {
+	height: 500px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	height: calc(100vh - 50px); /* we are substracting height of navigation bar to make sure that banner won't be higher than viewport */
+	color: #fff;
+	text-align: center;
+}
+
+.hero-title {
+	font-size: 4rem;	
+	font-weight: lighter;
+	max-width: calc(100% - 30px); /*IE hack. without it title goes out of the container*/
+	text-shadow: 2px 2px 8px #000;
+}
+
+.date-info {
+	font-size: 1.5rem;
+	color: #fff;
+	padding: 0.7rem;
+	text-transform: uppercase;
+	letter-spacing: 0.045rem;
+	border: 2px solid #fff;
+	max-width: calc(100% - 30px); /*IE hack. without it element goes out of the container*/
+	text-shadow: 2px 2px 8px #000;
+	box-shadow: 0px 0px 5px 5px #444;
+}
+
+
+
+/*--------------------------------*/
+/*-------Main navigation style----*/
+/*--------------------------------*/
+
+.main-nav {
+	height: 52px;
+	border-bottom: 1px solid #aaa; 
+	position: relative;
+	/padding-bottom: 5px;
+}
+
+#topnav {
+	display: flex;
+}
+
+.menu_link {
+	color: #fff;
+	padding: 0 15px;
+	line-height: 50px;
+	
+}
+
+.main_menu > .menu_link:hover {
+	border-bottom: 1px solid #fff;
+}
+
+.logo {
+	margin-right: auto;
+	margin-left: -15px;
+	font-size: 1.4rem;
+}
+
+.mobile_menu_icon {
+	display: none;
+}
+
+.mobile_menu_icon:hover {
+	background-color: #444;
+}
+
+/*--------Social Icons---------*/
+/*----We are using font icons------*/
+
+[data-icon]:before {
+  font-family: 'icomoon'; /* BYO icon font, mapped smartly */
+  content: attr(data-icon);
+  speak: none; /* Not to be trusted, but hey. */
+}
+
+.screen-reader-text { 
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+
+
+
+/*-----------Media queries for navigation-----------*/
+
+@media only screen and (max-width: 1280px) {
+	.mobile_menu_icon {
+		display: block;
+		margin-right: -15px;
+		font-size: 1.8rem;
+	}
+
+	.main-nav {
+		background-color: #222;
+		border-bottom: 2px solid #000;
+
+	}
+	/*-------------------------------------------------------------------*/
+	/*-----Next 2 blocks of properties are responsible for menu behavior*/
+	/*------------------------------------------------------------------*/
+	.main_menu{
+		position: absolute;
+		top: 52px;
+		transition: opacity 0.5s, width 0.5s;
+		/left: 0;
+		right: 0;
+		display: flex;
+		flex-direction: column;
+		max-height: auto;
+		overflow: hidden;
+		text-align: center;
+		background-color: #222;
+		border-top: 1px solid #878787;
+		opacity: 0;
+		width: 0px;
+	}
+
+	.main_menu.display {
+		/max-height: 560px;	
+		width: 100%;
+		opacity: 1;
+	}
+
+	.main_menu > .menu_link {
+		color: #aaa;
+	}
+
+	.main_menu > .menu_link:hover {
+		border: none;
+		color: #fff;
+	}	
+}
+
+
+
+/*--------------------------------*/
+/*-------About section style----*/
+/*--------------------------------*/
+
+.introductory,
+.schedule {
+	width: 50%;
+	padding: 10px;
+}
+
+.intro-title {
+	margin-bottom: 1.5rem;
+}
+
+.introductory .content {
+	margin-bottom: 2rem;
+}
+
+.speaker-foto {
+	float: left;
+	max-width: 100%;
+	height: auto;
+}
+
+.speaker-role {
+	font-weight: bolder;
+	font-size: 1.1rem;
+	color: #888;
+}
+
+.speaker-bio {
+	font-size: 1.0rem;
+}
+
+/*Social icons on the speaker foto*/
+
+.foto {
+	position: relative;
+	float: left;
+	width: 50%;
+	margin-right: 10px;
+}
+
+.foto-social-icon {
+	background-color: rgba(0,0,0,0.4);
+	font-size: 1.5rem;
+	padding: 5px 15px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.foto-social-icon a {
+	color: #fff;
+}
+
+
+
+/*--------------------------------*/
+/*-------Schedule section style----*/
+/*--------------------------------*/
+
+* {
+	box-sizing: border-box;
+}
+
+.title {
+	font-size: 1.3rem;
+	/margin-top: 15px;
+	margin-bottom: 15px;
+	color: #444;
+}
+
+.time {
+	font-size: 1.1rem;
+	font-weight: bold;
+	color: #878787;
+	margin-bottom: 1px;
+}
+
+.schedule-plan {
+	/background: pink;
+	border: 1px solid;
+	width: 97%;
+	margin: auto;
+	margin-left: 3%;
+	/margin-top: 40px;
+}
+
+.schedule-item {
+	color: #555;
+	padding: 15px 70px 15px 15px;
+	max-height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: max-height 1.2s;
+}
+
+.schedule-item:hover {
+	 max-height: 500px;
+	 background: #eee;
+	 cursor: pointer;
+}
+.event-description {
+	font-size: 1rem;
+	font-weight: lighter;
+	opacity: 0;
+	transition: opacity 0.8s;
+}
+
+.schedule-item:hover .event-description {
+	opacity: 1;
+}
+
+.schedule-item::before {
+	content: "";
+	display: block;
+	position: absolute;
+	right: 30px;
+	top: 0;
+	bottom: 0;
+	width: 1px;
+	/height: 30px;
+	background: #888;
+}
+
+.schedule-item:first-of-type::before {
+	top: 50%;
+	bottom: 0;
+}
+
+.schedule-item:last-of-type::before {
+	top: 0;
+	bottom: 50%;
+}
+
+.schedule-item::after {
+	content: "";
+	display: block;
+	position: absolute;
+	right: 23px;
+	top: 50%;
+	width: 12px;
+	height: 12px;
+	border: 1px solid #888;
+	background: #fff;
+	transform: rotate(45deg);
+	transition: background-color 0.5s;
+}
+
+.schedule-item:hover::after {
+	background-color: #444;
+}
+
+.schedule-item:hover::before {
+	background-color: #000;
+}
+
+
+
+
+
+
+/*--------------------------------*/
+/*-------Speakers section style----*/
+/*--------------------------------*/
+.speakers {
+	background-color: #ddd;
+	background: linear-gradient(
+				rgba(255,255,255,0.9),
+				rgba(255,255,255,0.9)),
+				url(../images/vienna-banner.jpg) no-repeat fixed center;
+	background-size: cover;			 
+
+
+}
+
+ .section-title {
+	text-align: center;
+	width: 7em;
+	max-width: 90%;
+	padding: 7px;
+	margin: 0 auto;
+	margin-bottom: 3rem;
+	border: 2px solid;
+}
+
+.speakers-gallery {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.speakers-gallery .bio-section {
+	padding: 10px;
+	width: 50%;
+	margin-bottom: 30px;
+}
+
+
+
+/*--------------------------------*/
+/*-------Pricing section style----*/
+/*--------------------------------*/
+
+.pricing-banner {
+	padding: 50px 0;
+	background-color: #333;
+}
+
+.pricing .section-title {
+	margin:0 auto;
+	color: #fff;
+}
+
+.price-table {
+	text-align: center;
+	border: 2px solid #333;
+	padding: 15px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.feature-list {
+	list-style-type: none;
+	margin: 0 0 1rem 0;
+	padding: 1rem 0;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	/line-height: 2;
+	font-size: 0.85rem;
+	color: #777;
+}
+
+.feature-list li {
+	margin-bottom: 0.8rem;
+}
+
+.feature-list li:last-child {
+	margin-bottom: initial;
+}
+
+.price-tag {
+	font-size: 1.6rem;
+	font-weight: bold;
+	color: #444;
+}
+
+
+
+/*-------------------------------------*/
+/*-------Registration section style----*/
+/*-------------------------------------*/
+
+.registration-section {
+	display: flex;
+	background-color: #333;
+}
+
+.registration-form-wrapper {
+	margin-right: 0;
+	margin-left: auto;
+	max-width: 640px;
+	padding-left: 10%;
+	padding-right: 5%;
+}
+
+.registration {
+	width: 50%;
+}
+
+.register-form {
+	padding: 10px;
+}
+
+.registration-section-title,
+.pricing-plan-label {
+	color: #fff;
+}
+
+.pricing-plan-label {
+	font-size: 1.7rem;
+	font-weight: bold;
+	margin-top: 35px;
+}
+
+.registration-section-title {
+	margin-bottom: 1.8rem;
+}
+
+.register-form .input-field {
+	display: block;
+	width: 100%;
+	margin-bottom: 25px;
+}
+
+.btn-register {
+	display: block;
+	font-weight: bolder;
+	letter-spacing: 0.045rem;
+}
+
+.register-form input[type="radio"] {
+	display: none;
+}
+
+.price-option-label {
+	margin-bottom: 25px;
+	display: inline-block;
+	padding: 5px 15px 5px 45px;
+	/border: 1px solid #fff;
+	color: #fff;
+	position: relative;
+	cursor: pointer;
+	transition: all 0.4s;
+}
+
+.price-option-label::before {
+	content: "";
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	position: absolute;
+	left: 15px;
+	transition: all 0.4s;
+}
+
+.price-option-label:hover {
+	background: rgba(255,255,255,0.15);
+}
+
+.price-option-label:hover::before {
+	background-color: #fff;
+}
+
+.register-form input[type="radio"]:checked + .price-option-label {
+	background-color: rgba(255,255,255,0.15);
+	padding-left: 15px;
+}
+
+.register-form input[type="radio"]:checked + .price-option-label::before {
+	display: none;
+}
+
+
+
+/*--------------------------------*/
+/*-------Map section style--------*/
+/*--------------------------------*/
+
+.map-section {
+	width: 50%;
+}
+
+.map {
+	width: 100%;
+	height: 100%;
+}
+
+
+
+
+
+/*--------------------------------*/
+/*-------Sponsor section style----*/
+/*--------------------------------*/
+.sponsors {
+	padding: 60px 0;
+	text-align: center;
+}
+
+.sponsors .section-title {
+	width: 440px;
+	max-width: 85%;
+}
+
+.wrapper-narrow {
+	width: 75%;
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
+.logo-sponsor {
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 150px;
+}
+
+.support-cta {
+	margin-top: 2rem;
+	font-weight: bold;
+}
+
+.support-cta > a {
+	color: #1A3EA4;
+}
+
+
+
+/*--------------------------------*/
+/*-------Main footer style--------*/
+/*--------------------------------*/
+
+.main-footer {
+	padding: 50px 0;
+	background-color: #333;
+	color: #fff;
+}
+
+.footer-section-title {
+	font-size: 1.7rem;
+	margin-bottom: .5rem;
+}
+
+.social-icon {
+	/display: inline-block;
+	width: 30px;
+	height: 30px;
+}
+
+.input-field {
+	padding: 8px 12px;
+	margin-bottom: 25px;	
+	background-color: #555;
+	border: none;
+	color: #fff;
+}
+
+.input-field:focus {
+	background-color: transparent;
+	outline: none;
+	border-bottom: 1px solid #fff;
+	padding-bottom: 7px;
+}
+
+.btn {
+	padding: 7px 12px;
+	border: 1px solid #fff;
+	background-color: transparent;
+	color: #fff;
+	cursor: pointer;
+}
+
+.btn:hover {
+	/background-color: rgba(255,255,255,0.1);
+	box-shadow: 2px 3px 5px 2px #000;
+
+}
+
+.copyrights {
+	display: block;
+	width: 95%;
+	margin: 2rem auto -20px;
+	/margin-top: 2rem;
+	/margin-bottom: -20px;
+	text-align: center;
+	color: #777;
+}
+
+
+
+/*------------------------------------------*/
+/*-------Media Queries for mobile layout----*/
+/*------------------------------------------*/
+
+@media only screen and (max-width: 760px){
+
+	/*-----Main header style*/
+
+	.hero-title {
+		font-size: 2rem;
+	}
+
+	.date-info {
+		font-size: 1rem;
+		border: none;
+	}
+
+	/*---------------------*/
+
+	/*---About section layout*/
+
+	.about {
+		flex-wrap: wrap;
+	}
+
+	.introductory,
+	.schedule {
+		width: 100%;
+	}
+
+	.introductory .content,
+	.introductory {
+		margin-bottom: 4rem;
+	}
+
+	/*---Speakers section layout*/
+
+	.speakers-gallery .bio-section {
+		width: 100%;
+	}
+
+	/*-------Pricing section style----*/
+
+	.col-1-3{
+		width: 100%;
+	}
+
+	.col-1-3:not(:first-child) .price-table {
+		margin-top: 0;
+	}
+
+	/*-------Sponsor section style----*/
+
+	.sponsors .col-1-3 {
+		width: 50%;
+	}
+
+	/*-------Registration form and Map section layout----*/
+
+	.registration-form-wrapper {
+		max-width: 100%;
+		padding: 0 5%;
+	}
+
+	.registration {
+		width: 100%;
+	}
+
+	.map-section {
+		width: 100%;
+	}
+
+	.registration-section {
+		flex-wrap: wrap;
+	}
+
+	.map-section {
+		background-color: #fff;
+	}
+
+	.map {
+		height: 300px;
+	}
+
+
+}
+
+@media only screen and (max-width: 600px) {
+
+
+
+	/*------Main footer lauout-------*/
+	.main-footer .justify-space-arnd {
+		justify-content: flex-start;
+	}
+}
+
+@media only screen and (max-width: 460px) {
+	
+	/*-----Main header style*/
+
+	.hero-title {
+		font-size: 2rem;
+	}
+
+	.date-info {
+		font-size: 1rem;
+	}
+
+	/*---------------------*/
+
+	.bio-section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.foto {
+		width: 100%;
+		margin-bottom: 2rem;
+	}
+
+	.speakers-gallery .bio-section {
+		margin-bottom: 60px;
+	}
+
+	.speakers-gallery .bio-section:last-child {
+		margin-bottom: 0;
+	}
+
+
+
+	.support-cta > a {   /*---stops support call to action link from breaking words*/
+		display: block;
+	}
+
+}
+
+
+
+
+
